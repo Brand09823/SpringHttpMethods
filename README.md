@@ -4,10 +4,10 @@
 Ejecuta este comando desde la terminal:
 
 ```bash
-psql -U postgres
+psql -h db -U postgres -d postgres
 ```
 
-Luego crea el usuario y la base de datos:
+Cuando solicite la contraseña, escribe `postgres` (la configurada para el contenedor de PostgreSQL). Luego crea el usuario y la base de datos:
 
 ```sql
 CREATE USER chochos WITH PASSWORD 'chochos';
@@ -158,9 +158,4 @@ Luego revisa la lista de productos para confirmar que el registro se haya elimin
 > kill <PID>
 > ```
 >
-> Si necesitas iniciar PostgreSQL porque el contenedor se reinició, usa estos comandos:
->
-> ```bash
-> sudo su
-> service postgresql start
-> ```
+> PostgreSQL se inicia automáticamente como un contenedor separado. Si no está disponible, reinicia el Dev Container desde VS Code.
